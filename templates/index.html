@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" 
+          content="width=device-width, 
+                        initial-scale=1.0">
+    <title>Gym Management</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="shortcut icon" href="../img/icon2.png" type="image/x-icon">
+</head>
+
+  
+<body>
+    <header>
+        <h1 class="heading">Gym Management</h1>
+        </div>
+    </header>
+    <table>
+        <tr>
+            <td>
+    <h3>User</h3>
+    <!-- container div -->
+    <div class="user">
+        
+        <!-- upper button section to select
+             the login or signup form -->
+        <div class="slider"></div>
+        <div class="btn">
+            <button class="login">Login</button>
+            <button class="signup">Signup</button>
+        </div>
+  
+        <!-- Form section that contains the
+             login and the signup form -->
+        <div class="form-section">
+  
+            <!-- login form -->
+            <div class="login-box">
+                <form action="{{ url_for('login') }}" class="login-form" method="post">
+                    {% if message is defined and message %}
+                    <div class="alert alert-warning">
+                        {{message}}
+                    </div>
+                    {% endif %}
+                <input type="email" 
+                       name='email'
+                       class="email ele" 
+                       placeholder="youremail@email.com" required>
+                       <br>
+                <input type="password"
+                       name='password'
+                       class="password ele" 
+                       placeholder="password" required>
+                       <br>
+                       <input type="submit" value="Login" class="clkbtn" >
+                </form>
+            </div>
+  
+            <!-- signup form -->
+            <div class="signup-box">
+                <form action="{{ url_for('signup') }}" class="signup-form" method="post">
+                    {% if message is defined and message %}
+                    <div class="alert alert-warning">
+                        {{message}}
+                    </div>
+                    {% endif %}
+                <input type="text" 
+                       name="name"
+                       class="name ele" 
+                       placeholder="Enter your name" required>
+                       <br>
+                <input type="email"
+                       name="email" 
+                       class="email ele" 
+                       placeholder="youremail@email.com" required>
+                       <br>
+                <input type="password"
+                       name="password" 
+                       class="password ele" 
+                       placeholder="password" required>
+                       <br>
+                <input type="password"
+                       name="confirm_password" 
+                       class="password ele" 
+                       placeholder="Confirm password" required>
+                       <br>
+                <input type="submit" value="Signup" class="clkbtn">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="../static/js/index.js"></script>
+    </td>
+    <td>
+        <h3>Admin</h3>
+    <!-- container div -->
+    <div class="admin">
+        
+        <!-- upper button section to select
+             the login or signup form -->
+        <div class="slider2"></div>
+        <div class="btn">
+            <button class="login">Login</button>
+            <!-- <button class="signup">Signup</button> -->
+        </div>
+  
+        <!-- Form section that contains the
+             login and the signup form -->
+        <div class="form-section">
+  
+            <!-- login form -->
+            <div class="login-box">
+                <form action="{{ url_for('admin_login') }}" class="login-form" method="post">
+                <input type="email" 
+                       name="email" 
+                       class="email ele" 
+                       placeholder="youremail@email.com" required>
+                          <br>
+                <input type="password"
+                       name="password"
+                       class="password ele" 
+                       placeholder="password" required>
+                       <br>
+                       <input type="submit" value="Login" class="clkbtn">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="../static/js/index.js"></script>
+    </td>
+    </tr>
+    </table>
+</body>
+  
+</html>
